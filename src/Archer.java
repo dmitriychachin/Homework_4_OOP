@@ -1,6 +1,7 @@
-public class Archer extends Warrior<Throwing>{
-    public Archer(String name, int hp, Throwing weapon) {
-        super(name, hp, weapon);
+public class Archer extends Warrior<Throwing, Shield>{
+
+    public Archer(String name, int hp, Shield protect, Throwing weapon) {
+        super(name, hp, protect, weapon);
     }
 
     public int range(){

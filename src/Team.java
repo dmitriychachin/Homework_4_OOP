@@ -21,7 +21,8 @@ public class Team<T extends Personage> implements Iterable<T>{
             res.append(personage)
                     .append("\n");
         }
-        res.append(String.format("Максимальная дальность: %d", maxRange()));
+        res.append(String.format("Максимальная дальность: %d\n", maxRange()));
+        res.append(String.format("Миниальная защта: %d\n",minProtect()));
         return res.toString();
     }
 
@@ -36,5 +37,15 @@ public class Team<T extends Personage> implements Iterable<T>{
             }
         }
         return max;
+    }
+
+    public int minProtect (){
+        int min = 100;
+        for (T pers:this) {
+                if(pers.protect.protection()<min){
+                    min= pers.protect.protection();
+                }
+            }
+        return min;
     }
 }
